@@ -12,10 +12,9 @@ Welcome to the **Library Management System CLI App**, a command-line application
   - Monitor the status and availability of books.  
 - **Loan Monitoring**  
   - Track borrowed and returned books.  
-  - View overdue loans and generate reports.  
 - **Meeting Room Management**  
   - Reserve meeting rooms for library-related activities.  
-  - View and manage meeting room schedules.  
+  - View and manage meeting room availability.  
 
 ### **Member Role**  
 - **Book Borrowing**  
@@ -23,5 +22,5 @@ Welcome to the **Library Management System CLI App**, a command-line application
 - **Book Returning**  
   - Return borrowed books and check the loan status.  
 - **View Borrowed Books**  
-  - View a list of all books currently borrowed by the member, along with their due dates.  
+  - View a list of all books currently borrowed by the member.  
 
