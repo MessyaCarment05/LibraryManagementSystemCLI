@@ -1,7 +1,5 @@
 package librarycli;
 
-import librarycli.Borrowable;
-
 public class MeetingRoom implements Borrowable {
 	private String name;
 	private int capacity;

@@ -1,6 +1,7 @@
 package librarycli;
 import java.time.LocalDateTime;
 import java.util.*;
+
 public class Librarian extends User {
 	Member member = null;
 	int transID=1;
@@ -25,6 +26,10 @@ public class Librarian extends User {
 			countLoop=0;
 			System.out.print("Masukkan ID (UXXXX), X=[0-9]   : ");
 			id=sc.nextLine();
+			while(!id.matches("U\\d{4}")) {
+				System.out.print("Masukkan ID (UXXXX), X=[0-9]   : ");
+				id=sc.nextLine().trim();
+			}
 			for (int i=0; i<library.getUser().size(); i++)
 			{
 				if(!library.getUser().get(i).getUserID().equals(id))
@@ -47,8 +52,12 @@ public class Librarian extends User {
 		}
 		System.out.print("Masukkan Nama : ");
 		nama=sc.nextLine();
-		System.out.print("Masukkan Email : ");
+		System.out.print("Masukkan Email (@gmail.com) : ");
 		email=sc.nextLine();
+		while(!email.contains("@gmail.com")) {
+			System.out.print("Masukkan Email (@gmail.com) : ");
+			email=sc.nextLine();
+		}
 		System.out.print("Masukkan No. Telepon : ");
 		phone=sc.nextLine();
 		library.user.add(new Librarian(id, nama, email, phone));

@@ -1,5 +1,6 @@
 package librarycli;
 import java.util.*;
+
 public class Book implements Borrowable {
 
 	private String title;
@@ -79,7 +80,11 @@ public class Book implements Borrowable {
 		System.out.print("Masukkan Judul Buku : ");
 		judulBuku=sc.nextLine();
 		System.out.print("Masukkan ISBN [xxx-xxxx-xx-x], x adalah angka 0-9: ");
-		isbn=sc.nextLine();
+		isbn=sc.nextLine().trim();
+		while(!isbn.matches("\\d{3}-\\d{4}-\\d{2}-\\d{1}")) {
+			System.out.print("Masukkan ISBN [xxx-xxxx-xx-x], x adalah angka 0-9: ");
+			isbn=sc.nextLine().trim();
+		}
 		System.out.print("Masukkan Author [0 for stop]: ");
 		author=sc.nextLine();
 		if (!author.equals("0"))
@@ -97,8 +102,12 @@ public class Book implements Borrowable {
 				tempAuthor.add(author);
 			}
 		}
-		System.out.print("Masukkan Stok Buku : ");
+		System.out.print("Masukkan Stok Buku [>0]: ");
 		available=sc.nextInt();
+		while (available<=0) {
+			System.out.print("Masukkan Stok Buku [>0]: ");
+			available=sc.nextInt();
+		}
 		sc.nextLine();
 		System.out.print("Masukkan Publisher : ");
 		publisher=sc.nextLine();

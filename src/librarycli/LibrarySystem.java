@@ -1,6 +1,9 @@
 package librarycli;
 
 import java.util.*;
+
+
+
 import java.time.LocalDateTime;
 public class LibrarySystem {
 	int indexUser;
@@ -56,19 +59,13 @@ public class LibrarySystem {
 		{
 			System.out.print("Input UserID [0 to finish]: ");
 			inputID=sc.nextLine();
-			int search=searchUser(inputID);
-			
+			int search=searchUser(inputID);	
 			while(search==0)
 			{
 				System.out.println("User Not Found");
 				System.out.print("Input UserID [0 to finish]: ");
 				inputID=sc.nextLine();
-				search=searchUser(inputID);
-				if(inputID.equals("0"))
-				{
-					stay=0;
-					break;
-				}		
+				search=searchUser(inputID);	
 			}
 		
 			System.out.println("User Information : ");
@@ -261,6 +258,14 @@ public class LibrarySystem {
 		{
 			System.out.printf("%s\n", user.get(indexUser).toString());
 		}
+	}
+	
+	public int countCopiesBook() {
+		int countCopies=0;
+		for (int i=0; i<book.size(); i++) {
+			countCopies+=book.get(i).getAvailableCopies();
+		}
+		return countCopies;
 	}
 	public void viewTransaction()
 	{

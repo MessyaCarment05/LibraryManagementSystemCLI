@@ -3,11 +3,7 @@ package librarycli;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import librarycli.Book;
-import librarycli.LibrarySystem;
-import librarycli.MeetingRoom;
-import librarycli.Member;
-import librarycli.User;
+
 public class Member extends User {
 	int count=0;
 	private ArrayList<Book>borrowed = new ArrayList<>();
@@ -47,6 +43,10 @@ public class Member extends User {
 			countLoop=0;
 			System.out.print("Masukkan ID (UXXXX), X=[0-9]   : ");
 			id=sc.nextLine();
+			while(!id.matches("U\\d{4}")) {
+				System.out.print("Masukkan ID (UXXXX), X=[0-9]   : ");
+				id=sc.nextLine().trim();
+			}
 			for (int i=0; i<library.getUser().size(); i++)
 			{
 				if(!library.getUser().get(i).getUserID().equals(id))
@@ -63,14 +63,15 @@ public class Member extends User {
 			{
 				System.out.println("ID sudah terdapat dalam sistem");
 			}
-			
-			
 		}
-		
 		System.out.print("Masukkan Nama  : ");
 		nama=sc.nextLine();
 		System.out.print("Masukkan Email : ");
 		email=sc.nextLine();
+		while(!email.contains("@gmail.com")) {
+			System.out.print("Masukkan Email (@gmail.com) : ");
+			email=sc.nextLine();
+		}
 		System.out.print("Masukkan No. Telepon : ");
 		phone=sc.nextLine();
 		library.user.add(new Member(id, nama, email, phone));
@@ -99,14 +100,15 @@ public class Member extends User {
 		int flag=0;
 		int index = 0;
 		library.printAvailableBook();
-		if (library.getBook().size()==0)
+		if (library.countCopiesBook()==0)
 		{
+			System.out.println("Tidak ada buku yang tersedia");
 			return;
 		}
 		String input=null;
 		while(flag==0)
 		{
-			System.out.print("Masukkan Judul: ");
+			System.out.print("Masukkan Judul : ");
 			input=sc.nextLine();
 			for (int i=0; i<library.getBook().size(); i++)
 			{
@@ -144,6 +146,7 @@ public class Member extends User {
 		printBorrowed();
 		if(borrowed.size()==0)
 		{
+			
 			return;
 		}
 	
