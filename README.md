@@ -22,5 +22,11 @@ Welcome to the **Library Management System CLI App**, a command-line application
 - **Book Returning**  
   - Return borrowed books and check the loan status.  
 - **View Borrowed Books**  
-  - View a list of all books currently borrowed by the member.  
+  - View a list of all books currently borrowed by the member.
+ 
+## Software used:
+- Eclipse 2020-06
+
+## Programming Languages used:
+- Java
 
