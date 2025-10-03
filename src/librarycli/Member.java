@@ -66,7 +66,7 @@ public class Member extends User {
 		}
 		System.out.print("Masukkan Nama  : ");
 		nama=sc.nextLine();
-		System.out.print("Masukkan Email : ");
+		System.out.print("Masukkan Email (@gmail.com) : ");
 		email=sc.nextLine();
 		while(!email.contains("@gmail.com")) {
 			System.out.print("Masukkan Email (@gmail.com) : ");
