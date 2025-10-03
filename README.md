@@ -24,9 +24,9 @@ Welcome to the **Library Management System CLI App**, a command-line application
 - **View Borrowed Books**  
   - View a list of all books currently borrowed by the member.
  
-## Software used:
+### **Software**
 - Eclipse 2020-06
 
-## Programming Languages used:
+### **Programming Language**
 - Java
 
